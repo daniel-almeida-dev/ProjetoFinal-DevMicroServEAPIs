@@ -9,11 +9,11 @@ app.use(express.json());
 app.use(cors());
 
 const connection = mysql.createConnection({
-    host: "190.124.247.232:9998",
+    host: "190.124.247.232",
     user: "db_finan_application",
     password: "dbfinanapp@123456",
     database: "db_financial",
-    port: "3306"
+    port: "9998"
 });
 
 connection.connect((error, data) => {
