@@ -28,7 +28,7 @@ connection.connect((error, data) => {
     console.log(`Db connection thread information -> ${connection.threadId}`);
 });
 
-app.get("/api/users", (req, res) => {
+app.get("/api/users", auth, (req, res) => {
     connection.query("SELECT * FROM users", (error, results) => {
         if (error) {
             console.error(`Myslq select error -> ${error}`);
@@ -97,7 +97,7 @@ app.post("/api/users/create", (req, res) => {
     });
 });
 
-app.put("/api/users/update/:id", (req, res) => {
+app.put("/api/users/update/:id", auth, (req, res) => {
     connection.query("SELECT * FROM users WHERE id = ?", [req.params.id], (error, results) => {
         if (error) {
             console.error(`Myslq select error -> ${error}`);
