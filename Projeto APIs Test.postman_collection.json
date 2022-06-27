@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "60a7bee1-ff08-4240-a9a0-1e2247b6fb8b",
+		"name": "Projeto APIs Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4159415"
+	},
+	"item": [
+		{
+			"name": "Criar Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"danieldea\",\r\n    \"password\": \"admin@123456\",\r\n    \"name\": \"Daniel de Almeida\",\r\n    \"email\": \"daniel@gmail.com\",\r\n    \"phone\": \"11952775476\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9001/api/users/create",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Usuário",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJkYW5pZWxkZWEiLCJpYXQiOjE2NTYyOTQ1MjQsImV4cCI6MTY1NjQ2NzMyNH0.TRSLDB_kos-7n0BQWPlOu5OVx7_mf8KQ8ZZ5kA0ZUdI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Daniel de Almeida\",\r\n    \"email\": \"danielalmeida@gmail.com\",\r\n    \"phone\": \"11952775476\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9001/api/users/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"users",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Senha",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJkYW5pZWxkZWEiLCJpYXQiOjE2NTYyOTQ1MjQsImV4cCI6MTY1NjQ2NzMyNH0.TRSLDB_kos-7n0BQWPlOu5OVx7_mf8KQ8ZZ5kA0ZUdI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\": \"admin@123456\",\r\n    \"newPassword\": \"Admin@123456\",\r\n    \"passwordConfirmation\": \"Admin@123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9001/api/users/updatepassword/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"users",
+						"updatepassword",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visualizar Todos Usuários",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJkYW5pZWxkZWEiLCJpYXQiOjE2NTYyOTQ1MjQsImV4cCI6MTY1NjQ2NzMyNH0.TRSLDB_kos-7n0BQWPlOu5OVx7_mf8KQ8ZZ5kA0ZUdI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:9001/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"danieldea\",\r\n    \"password\": \"Admin@123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9001/api/token",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Informação Financeira",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJkYW5pZWxkZWEiLCJpYXQiOjE2NTYyOTQ1MjQsImV4cCI6MTY1NjQ2NzMyNH0.TRSLDB_kos-7n0BQWPlOu5OVx7_mf8KQ8ZZ5kA0ZUdI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\": \"0848784\",\r\n    \"bankName\": \"Non Bank\",\r\n    \"accountType\": \"Corrente\",\r\n    \"holderName\": \"Daniel de Almeida\",\r\n    \"cardLimit\": 10000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9002/api/financial/create",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"financial",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Informações Financeiras",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJkYW5pZWxkZWEiLCJpYXQiOjE2NTYyOTQ1MjQsImV4cCI6MTY1NjQ2NzMyNH0.TRSLDB_kos-7n0BQWPlOu5OVx7_mf8KQ8ZZ5kA0ZUdI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bankName\": \"Non Bank\",\r\n    \"accountType\": \"Poupança\",\r\n    \"holderName\": \"Daniel de Almeida\",\r\n    \"cardLimit\": 10000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9002/api/financial/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"financial",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visualizar Todas Informações Financeiras",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJkYW5pZWxkZWEiLCJpYXQiOjE2NTYyOTQ1MjQsImV4cCI6MTY1NjQ2NzMyNH0.TRSLDB_kos-7n0BQWPlOu5OVx7_mf8KQ8ZZ5kA0ZUdI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:9002/api/financial/accounts",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"financial",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
